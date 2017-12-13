@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="css/style.css" rel="stylesheet">
+  <script src="js/jquery-1.11.0.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/angular.min.js"></script>
+  <script src="js/angular-route.js"></script>
+  <script src="js/script.js"></script>
+  
+</head>
+<body id="page-top" class="index" ng-controller="mainController">
+
+   <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+               <h2> <a class="" href="#page-top" style="color:purple;text-decoration:none; font-size:16px;text-weight:700;">Logo</a></h2>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="#service"><i class="fa fa-shield"></i> Service</a></li>
+                    <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+  <div id="main">
+    <div ng-view></div>  
+  </div>
+  
+ <footer>
+        
+			<div class="col-md-12">
+                    <span class="copyright">Copyright &copy; Inspire solution 2017</span>
+            </div>
+             
+  </footer>
+  
+</body>
+
+</html>

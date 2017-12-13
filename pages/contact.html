@@ -1,0 +1,60 @@
+<html ng-app="myApp">
+<head>
+</head>
+<body >
+	<div class="col-sm-12" >
+     
+  </div>
+<div class="">
+	<section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Contact Us</h2>
+                    <h3 class="section-subheading text-muted"></h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <form name="frm" id="contactForm" action="" ng-controller="contactController" novalidate>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="username" ng-model="user.firstname" placeholder="Your Name *" id="name" required>
+									<span style="color:red" class="msg" ng-show="frm.username.$error.required">Enter Your Name</span> 
+                                    
+                                </div>
+                                <div class="form-group">
+                                   <input type="email" class="form-control" ng-model="user.email" name="email" placeholder="Your Email *" autocomplete="off" required>
+                                   <span style="color:red" class="msg" ng-show="frm.email.$dirty && frm.email.$invalid">Enter The Valid Email Address</span>	
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="phone" ng-pattern="phoneNumbr" ng-model="user.phone" placeholder="Your Phone *" autocomplete="off" required />
+                                    <span style="color:red" class="msg" ng-show="frm.phone.$error.required">Enter The Phone Number</span>
+									<span class="msg" ng-show="frm.phone.$error.minlength">Phone no not less that 10 char.</span>
+									<span class="msg" ng-show="frm.phone.$error.maxlength">Phone no not more than 11 char.</span><br/>
+									<span class="msg" ng-show="frm.phone.$error.pattern">Please match pattern [+91-036-78658 || 91-036-78658]</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <textarea class="form-control" name="message" ng-model="message.text" placeholder="Your Message *" id="message" required /></textarea>
+                                   <span style="color:red" class="msg" ng-show="frm.message.$error.required">Enter the message</span>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div>
+                               <button ng-disabled="frm.$invalid" class="btn btn-info" type="submit" ng-click="call()" value="Submit">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+</body>
+</html>

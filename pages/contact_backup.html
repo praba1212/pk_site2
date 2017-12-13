@@ -1,0 +1,45 @@
+<html ng-app="myApp">
+<head>
+</head>
+<body ng-controller="contactController">
+<div class="jumbotron text-center">
+	<h2>Contact Page</h2>
+	<div class="container contactRow">
+<div class="panel panel-primary">
+<div class="panel-body">
+<form class="form-horizontal" action="" name="frm">
+<div class="form-group">
+<label class="control-label col-sm-4" for="pas">Name:</label>
+<div class="col-sm-6">
+ <input type="text" class="form-control" name="username" ng-model="user.firstname" placeholder="Enter First Name" autocomplete=""  required/>
+<span style="color:red" class="msg" ng-show="frm.username.$error.required">Enter Your Name</span> 
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="pas">Email:</label>
+<div class="col-sm-6">
+ <input type="email" class="form-control" ng-model="user.email" name="email" placeholder="Enter Email Address" autocomplete="off" required>
+<span style="color:red" class="msg" ng-show="frm.email.$dirty && frm.email.$invalid">Enter The Valid Email Address</span>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="pas">Message:</label>
+<div class="col-sm-6">
+<textarea type="textarea"  rows="5" class="form-control" name="message" ng-model="message.text" id="pass" placeholder="" required></textarea>
+<span style="color:red" class="msg" ng-show="frm.message.$error.required">Enter the message</span>
+</div>
+</div>
+<div class="form-group">
+<div class="col-sm-offset-4 col-sm-10">
+<button ng-disabled="frm.$invalid" class="btn btn-info" type="submit" ng-click="call()" value="Submit">Submit</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+<script src='https://maps.googleapis.com/maps/api/js?v=3.exp&key= AIzaSyDwDj-8Cya9m_q3jPBi1jiSDJQ9v2r_gZg '></script><div style='overflow:hidden;height:400px;width:520px;'><div id='gmap_canvas' style='height:400px;width:520px;'></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=6062c52b08590dc924da6c572bc0e1bc9721a61a'></script><script type='text/javascript'>function init_map(){var myOptions = {zoom:12,center:new google.maps.LatLng(41.31,-72.92000000000002),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(41.31,-72.92000000000002)});infowindow = new google.maps.InfoWindow({content:'<strong></strong><br><br>06510 New Haven<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+</div>
+    
+</body>
+</html>
